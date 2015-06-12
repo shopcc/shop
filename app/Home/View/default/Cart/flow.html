@@ -1,0 +1,127 @@
+<include file="Public/header"/>
+<div style="clear:both"></div>
+
+<include file="layout/layout"/>
+<div class="block box">
+	<div class="blank"></div>
+	<div id="ur_here">
+		当前位置:
+		<a href=".">首页</a>
+		<code>&gt;</code>
+		购物流程
+	</div>
+</div>
+<div class="blank"></div>
+
+<div class="block table">
+
+	<script type="text/javascript" src="js/showdiv.js"></script>
+	<script type="text/javascript">
+			var user_name_empty = "请输入您的用户名！";
+			var email_address_empty = "请输入您的电子邮件地址！";
+			var email_address_error = "您输入的电子邮件地址格式不正确！";
+			var new_password_empty = "请输入您的新密码！";
+			var confirm_password_empty = "请输入您的确认密码！";
+			var both_password_error = "您两次输入的密码不一致！";
+			var show_div_text = "请点击更新购物车按钮";
+			var show_div_exit = "关闭";
+		</script>
+	<div class="flowBox">
+		<h6>
+			<span>商品列表</span>
+		</h6>
+		<form id="formCart" name="formCart" method="post" action="{:U('cart/update')}">
+			<table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+				<tr>
+					<th bgcolor="#ffffff">商品名称</th>
+					<th bgcolor="#ffffff">属性</th>
+					<th bgcolor="#ffffff">市场价</th>
+					<th bgcolor="#ffffff">本店价</th>
+					<th bgcolor="#ffffff">购买数量</th>
+					<th bgcolor="#ffffff">小计</th>
+					<th bgcolor="#ffffff">操作</th>
+				</tr>
+				<foreach name="cart_list" item="vo" key="k">
+				<tr>
+					<td bgcolor="#ffffff" align="center" style="width:300px;">
+						<a href="{:U('goods/detail',array('id'=>$vo['goods_id']))}" target="_blank">
+							<img style="width:80px; height:80px;" src="{$vo.goods_img}" border="0" title="{$vo.goods_name}" />
+						</a>
+						<br />
+						<a href="goods.php?id=8" target="_blank" class="f6">{$vo.goods_name}</a>
+					</td>
+					<td bgcolor="#ffffff">
+						{$vo.goods_attr}
+						<br />
+					</td>
+					<td align="center" bgcolor="#ffffff">￥{$vo.market_price}元</td>
+					<td align="center" bgcolor="#ffffff">￥{$vo.goods_price}元</td>
+					<td align="center" bgcolor="#ffffff">
+						<input type="text" onblur="check(this)" name="goods_number[{$k}]" id="goods_number_44" value="{$vo.goods_number}" size="4" class="inputBg" goods="{$vo.goods_id}" style="text-align:center " />
+						<input type="hidden" name="goods_id[]" value="{$vo.goods_id}">
+
+					</td>
+					<td align="center" bgcolor="#ffffff">￥{$vo.goods_price}元</td>
+					<td align="center" bgcolor="#ffffff">
+						<a href="javascript:if (confirm('您确实要把该商品移出购物车吗？')) location.href='{:U('/cart/drop',array('gid'=>$vo['goods_id']))}'; " class="f6">删除</a>
+					</td>
+				</tr>
+			</foreach>
+			</table>
+			<table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+				<tr>
+					<td bgcolor="#ffffff">购物金额小计 ￥{$price['total_goods']|default="0.00"}元，比市场价 ￥{$price['total_market']|default="0.00"}元 节省了 ￥{$price['total_market']-$price['total_goods']}元 ({$price['per']|default="0.00"}%)</td>
+					<td align="right" bgcolor="#ffffff">
+						<input type="button" value="清空购物车" class="bnt_blue_1" onclick="location.href='{:U('cart/clear')}'" />
+						<input name="submit" type="submit" class="bnt_blue_1" value="更新购物车" />
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" name="step" value="update_cart" />
+		</form>
+		<table width="99%" align="center" border="0" cellpadding="5" cellspacing="0" bgcolor="#dddddd">
+			<tr>
+				<td bgcolor="#ffffff">
+					<a href="./">
+						<img src="{$Think.const.RESOURCE}/images/continue.gif" alt="continue" />
+					</a>
+				</td>
+				<td bgcolor="#ffffff" align="right">
+					<a href="{:U('cart/checkout')}">
+						<img src="{$Think.const.RESOURCE}/images/checkout.gif" alt="checkout" />
+					</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="blank"></div>
+
+	<div class="blank5"></div>
+
+</div>
+	<load href="{$Think.const.RESOURCE}/js/toastr/toastr.min.js"/>
+	<load href="{$Think.const.RESOURCE}/js/toastr/core.js"/>
+	<load href="{$Think.const.RESOURCE}/js/toastr/toastr.min.css"/>
+
+<script type="text/javascript">
+
+	function check(tmp){
+		var id = $(tmp).val();
+		var goods_id = $(tmp).parent().children("input").eq(1).val();
+		if(id <= 0){
+			 $(tmp).val(1);
+				op_error('订单商品数量必须为大于0的整数','温馨提示'); 
+		}else{
+
+		 $.post('<?php echo U('cart/ajaxcheck');?>',{goods_number:id,goods_id:goods_id},function(data){
+
+				if(data.status =='0'){
+					op_error(data.info,'温馨提示');
+					$(tmp).val(1);
+				}
+			});
+		}
+	}
+</script>
+<div class="blank10"></div>
+<include file="Public/footer"/>

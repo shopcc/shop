@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="ECSHOP v2.7.3" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$goods.goods_name} - Powered by ECShop</title>
+<import type="css" file="css.style" basepath="{$Think.const.RESOURCE}"/>
+  <load href="{$Think.const.RESOURCE}/js/jquery.js"/>
+
+</head>
+<body>
+
+<import type="css" file="qq.images.qq" basepath="{$Think.const.RESOURCE}"/>
+<import type="js" file="js.utils" basepath="{$Think.const.RESOURCE}"/> 
+  <div id="Head">
+  <div id="headerTopArea" class="headerTopAreaBox">
+    <div class="headerTopArea">
+      <div class="headerTop">
+        <div class="headerTopLeft">
+          <div id="ECS_MEMBERZONE" class="loginArea"><div id="append_parent"></div>
+		  <if condition="$Think.session.user_id neq ''">
+您好, <a style="color: rgb(51, 51, 51);" class="top track" href="{：U('member/index')}">{$Think.session.user_name}</a> <span style="color: #a10000"><a target="_parent" href="{:U('member/logout')}" style="color: #a10000" class="top track">退出登录</a></span>
+        <else/>
+欢迎光临本店<span><a href="{:U('member/login')}" class="track">[&nbsp;登录&nbsp;</a>|<a href="{:U('member/reg')}" class="track">&nbsp;免费注册&nbsp;]</a></span>
+		</if>
+</div>
+          <div class="recommendArea"><a class="track" href="{:U('order/order_list')}">我的订单</a><a href="javascript:bookmark();" id="vanclFavorite">收藏本站</a></div>
+        </div>
+        <div class="headerTopRight">
+          <div id="vanclMap" ><a href="{:U('member/index')}" target="_blank">我的京东</a>
+            
+          </div>
+          
+           
+                    <div id="vanclMap"><a href="{:U('/cart')}" class="mapDropTitle track mapTitle" >查看购物车</a></div> 
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="LogoSearchBar" id="logoArea">
+    <div class="logoSearchSubnavArea">
+      <h1 class="logoArea"><a href="index.php" class="track"><img src="{$Think.const.RESOURCE}/images/logo.gif" /></a></h1>
+      <div class="searchAreaBlock">
+        <div class="searchLeft">
+          <ul id="searchBar" class="searchBar">
+          </ul>
+          <div class="searchInt">
+            <form id="searchForm" name="searchForm" method="post" action="{:U('/search/')}" onSubmit="return checkSearchForm()">
+              <input name="keywords" type="text" id="keyword" value="" class="searchText ac_input" />
+              <input type="submit" value="搜索" name="imageField" class="searchBtn" style="cursor:pointer;">
+            </form>
+          </div>
+           </div>
+        <div class="menuTopRight">
+          <div id="shoppingCarNone" class="active"> <p><a class="shopborder track" href="{:U('/cart')}" id="shoppingcar_link">购物车(<span car_product_total="shoppingCar_product_totalcount">{:getnum()}</span>)件</a><s></s></p>
+<div class="shopDropList"> 
+    <div class="shopnopru">
+    <div class="SCtotalpageno">您的购物车中没有任何商品</div>
+    <div class="SCtotalpageBottom"></div>
+  </div>
+   </div>
+ </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>

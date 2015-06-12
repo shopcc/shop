@@ -1,0 +1,81 @@
+<include file="Public/header"/>
+<body>
+
+<h1>
+<span class="action-span"><a href="{:U('Attribute/add',array('goods_type'=>$goods_type))}">添加属性</a></span>
+<span class="action-span1"><a href="__MODULE__/Index/main">SHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 商品属性 </span>
+<div style="clear:both"></div>
+</h1>
+
+<div class="form-div">
+  <form action="" name="searchForm">
+    <img src="{$Think.const.ADMIN_RES_PATH}/images/icon_search.gif" width="26" height="22" border="0" alt="SEARCH">
+    按商品类型显示：<select name="goods_type" onchange="searchAttr(this.value)">
+    <foreach name="type" item="good_type">
+    <option value="{$good_type.type_id}" <if condition="$good_type.type_id eq $goods_type">selected="true"<else /></if>>{$good_type.type_name}</option>
+    </foreach>
+    </select>
+  </form>
+</div>
+
+<form method="post" action="{:U('Attribute/batch')}?goods_type={$goods_type}" name="listForm">
+<div class="list-div" id="listDiv">
+
+  <table cellpadding="3" cellspacing="1">
+		<tr>
+			<th><input  type="checkbox" name="selectAll"> </th>
+			<th>编号</th>
+			<th>属性名称</th>
+			<th>商品类型</th>
+			<th>属性值的录入方式</th>
+			<th>可选值列表</th>
+			<th>排序</a></th>
+			<th>操作</th>
+		</tr>
+		<foreach name="list" item="vo">
+		<tr>
+			<td align="center"><span><input value="{$vo.attr_id}" name="checkboxes[]" type="checkbox"></span></td>
+			<td align="center">{$vo.attr_id}</td>
+			<td class="first-cell" nowrap="true" valign="top"><span>{$vo.attr_name}</span></td>
+			<td nowrap="true" align="center"><span>{$vo.type_name}</span></td>
+			<td nowrap="true" align="center"><span><if condition="$vo.attr_input_type eq 0">手工录入<elseif condition="$vo.attr_input_type eq 1">从列表中选择<else/>多行文本框</if></span></td>
+			<td valign="top"><span>{$vo.attr_values}</span></td>
+			<td align="right" nowrap="true" valign="top"><span>{$vo.sort_order}</span></td>
+			<td align="center" nowrap="true" valign="top">
+				<a href="{:U('Attribute/edit',array('attr_id'=>$vo['attr_id'],'goods_type'=>$goods_type))}" title="编辑"><img src="{$Think.const.ADMIN_RES_PATH}/images/icon_edit.gif" border="0" height="16" width="16"></a>
+				<a href="{:U('Attribute/del',array('attr_id'=>$vo['attr_id'],'goods_type'=>$goods_type))}" onclick="return confirm('确定删除该属性')" title="移除"><img src="{$Think.const.ADMIN_RES_PATH}/images/icon_drop.gif" border="0" height="16" width="16"></a>
+			</td>
+		</tr>
+		</foreach>
+      </table>
+
+  <table cellpadding="4" cellspacing="0">
+    <tbody><tr>
+      <td style="background-color: rgb(255, 255, 255);"><input type="submit" id="btnSubmit" value="删除" class="button" disabled="true"></td>
+      <td align="right" style="background-color: rgb(255, 255, 255);">      <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+            <div id="turn-page">
+   {$page}
+      </div>
+</td>
+    </tr>
+  </tbody></table>
+</div>
+
+</form>
+
+<div id="footer">
+	版权所有 &copy; 2012-2013 传智播客 - PHP培训 - </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("input[name='selectAll']").click(function(){
+		$("input[name='checkboxes[]']").attr('checked',true);
+		$("#btnSubmit").attr('disabled',false);
+	});
+});
+function searchAttr(goods_type){
+	window.location.href=goods_type;
+}
+</script>
+</body>
+</html>

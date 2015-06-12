@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>管理中心 - 转移商品 </title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<import type="css" file="styles.general" basepath="{$Think.const.ADMIN_RES_PATH}" />
+<import type="css" file="styles.main" basepath="{$Think.const.ADMIN_RES_PATH}" />
+
+<import type="js" file="js.transport" basepath="{$Think.const.ADMIN_RES_PATH}" />
+<import type="js" file="js/common.js" basepath="{$Think.const.ADMIN_RES_PATH}" />
+
+</head>
+<body>
+
+<h1>
+<span class="action-span"><a href="{:U('Category/alllist')}">商品分类</a></span>
+<span class="action-span1"><a href="__MODULE__/Index/main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 转移商品 </span>
+<div style="clear:both"></div>
+</h1>
+<div class="main-div">
+<form action="__SELF__" method="post" name="theForm" enctype="multipart/form-data">
+<table width="100%">
+  <tr>
+    <td>
+      <div style="font-weight:bold"><img src="{$Think.const.ADMIN_RES_PATH}/images/notice.gif" width="16" height="16" border="0" /> 什么是转移商品分类?</div>
+       <ul>
+         <li>在添加商品或者在商品管理中,如果需要对商品的分类进行变更,那么你可以通过此功能,正确管理你的商品分类。</li>
+       </ul>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <strong>从此分类</strong>&nbsp;&nbsp;
+      <select name="cat_id">
+       <option value="0">请选择...</option>
+   	  <foreach name="list" item="vo">
+   	  <option value="{$vo.cat_id}" <if condition="$vo.cat_id eq $cat_id">selected="true"<else/></if>>{$vo.cat_name}</option>
+   	  </foreach>
+   	  </select>&nbsp;&nbsp;
+      <strong>转移到</strong>
+      <select name="target_cat_id">
+       <option value="0">请选择...</option>
+       <foreach name="list" item="vo">
+   	  <option value="{$vo.cat_id}" <if condition="$vo.cat_id eq $cat_id">selected="true"<else/></if>>{$vo.cat_name}</option>
+   	  </foreach>
+   	  </select>&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="submit" name="move_cat" value="开始转移" class="button">
+      <input type="reset" value=" 重置 " class="button" />
+      <input type="hidden" name="act" value="move_cat" />
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+
+
+<div id="footer">
+共执行 1 个查询，用时 0.018001 秒，Gzip 已禁用，内存占用 2.225 MB<br />
+版权所有 &copy; 2005-2012 上海商派网络科技有限公司，并保留所有权利。</div>
+
+</body>
+</html>

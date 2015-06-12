@@ -1,0 +1,194 @@
+<include file="Public/header"/>
+<body>
+
+<h1>
+<span class="action-span"><a href="{:U('Role/showlist')}">角色列表</a></span>
+<span class="action-span1"><a href="__MODULE__/Index/main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - [{$info['role_name']|default=''}]分配权限 </span>
+<div style="clear:both"></div>
+</h1>
+<form method="POST" action="{:U('Role/auth_save')}" name="theFrom">
+<div class="list-div">
+<table cellspacing='1' id="list-table">
+<foreach name="auth0" item="v0">
+ <tr>
+  <td width="18%" valign="top" class="first-cell">
+    <input name="auth_ids[]" type="checkbox" value="{$v0.auth_id}" class="checkbox">{$v0.auth_name} 
+	</td>
+  <td>
+  <foreach name="auth1" item="v1">
+
+	<if condition ="$v1.auth_pid eq $v0['auth_id']">
+	  <foreach name="auth2" item="v2">
+  <if condition ="$v1['auth_id'] eq $v2['auth_pid']">
+ <div style="width:200px;float:left;">
+    <label for="{$v2.auth_c}_{$v2.auth_a}')"><input type="checkbox" name="action_code[]" value="{$v2.auth_c}-{$v2.auth_a}" id="{$v2.auth_c}_{$v2.auth_a}" class="checkbox"  checked="true"  onclick="checkrelevance('', '{$v2.auth_c}_{$v2.auth_a}')" title=""/>
+	
+    {$v2.auth_name}</label>
+    </div>
+	</if>
+  </foreach>
+ <div style="width:200px;float:left;">
+    <label for="{$v1.auth_c}_{$v1.auth_a}')"><input type="checkbox" name="action_code[]" value="{$v1.auth_c}-{$v1.auth_a}" id="{$v1.auth_c}_{$v1.auth_a}" class="checkbox"  checked="true"  onclick="checkrelevance('', '{$v1.auth_c}_{$v1.auth_a}')" title=""/>
+	<input type="hidden" name="auth_ids[]" value="{$v1.auth_id}"/>
+    {$v1.auth_name}</label>
+    </div>
+	</if>
+	</foreach>
+	<!--
+        <div style="width:200px;float:left;">
+    <label for="remove_back"><input type="checkbox" name="action_code[]" value="remove_back" id="remove_back" class="checkbox"  checked="true"  onclick="checkrelevance('', 'remove_back')" title=""/>
+    商品删除/恢复</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="cat_manage"><input type="checkbox" name="action_code[]" value="cat_manage" id="cat_manage" class="checkbox"  checked="true"  onclick="checkrelevance('', 'cat_manage')" title=""/>
+    分类添加/编辑</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="cat_drop"><input type="checkbox" name="action_code[]" value="cat_drop" id="cat_drop" class="checkbox"  checked="true"  onclick="checkrelevance('cat_manage', 'cat_drop')" title="cat_manage"/>
+    分类转移/删除</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="attr_manage"><input type="checkbox" name="action_code[]" value="attr_manage" id="attr_manage" class="checkbox"  checked="true"  onclick="checkrelevance('', 'attr_manage')" title=""/>
+    商品属性管理</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="brand_manage"><input type="checkbox" name="action_code[]" value="brand_manage" id="brand_manage" class="checkbox"  checked="true"  onclick="checkrelevance('', 'brand_manage')" title=""/>
+    商品品牌管理</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="comment_priv"><input type="checkbox" name="action_code[]" value="comment_priv" id="comment_priv" class="checkbox"  checked="true"  onclick="checkrelevance('', 'comment_priv')" title=""/>
+    用户评论管理</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="tag_manage"><input type="checkbox" name="action_code[]" value="tag_manage" id="tag_manage" class="checkbox"  checked="true"  onclick="checkrelevance('', 'tag_manage')" title=""/>
+    标签管理</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="goods_type"><input type="checkbox" name="action_code[]" value="goods_type" id="goods_type" class="checkbox"  checked="true"  onclick="checkrelevance('', 'goods_type')" title=""/>
+    商品类型</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="goods_auto"><input type="checkbox" name="action_code[]" value="goods_auto" id="goods_auto" class="checkbox"  checked="true"  onclick="checkrelevance('', 'goods_auto')" title=""/>
+    商品自动上下架</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="virualcard"><input type="checkbox" name="action_code[]" value="virualcard" id="virualcard" class="checkbox"  checked="true"  onclick="checkrelevance('', 'virualcard')" title=""/>
+    虚拟卡管理</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="picture_batch"><input type="checkbox" name="action_code[]" value="picture_batch" id="picture_batch" class="checkbox"  checked="true"  onclick="checkrelevance('', 'picture_batch')" title=""/>
+    图片批量处理</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="goods_export"><input type="checkbox" name="action_code[]" value="goods_export" id="goods_export" class="checkbox"  checked="true"  onclick="checkrelevance('', 'goods_export')" title=""/>
+    商品批量导出</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="goods_batch"><input type="checkbox" name="action_code[]" value="goods_batch" id="goods_batch" class="checkbox"  checked="true"  onclick="checkrelevance('', 'goods_batch')" title=""/>
+    商品批量上传/修改</label>
+    </div>
+        <div style="width:200px;float:left;">
+    <label for="gen_goods_script"><input type="checkbox" name="action_code[]" value="gen_goods_script" id="gen_goods_script" class="checkbox"  checked="true"  onclick="checkrelevance('', 'gen_goods_script')" title=""/>
+    生成商品代码</label>
+    </div>-->
+    </td></tr>
+</foreach>
+  <tr>
+    <td align="center" colspan="2" >
+      <input type="checkbox" name="checkall" value="checkbox" onclick="checkAll(this.form, this);" class="checkbox" />全选      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="submit"   name="Submit"   value=" 保存 " class="button" />&nbsp;&nbsp;&nbsp;
+      <input type="reset" value=" 重置 " class="button" />
+      <input type="hidden"   name="role_id"    value="{$info.role_id|default=''}" />
+    </td>
+  </tr>
+</table>
+</div>
+</form>
+
+
+<script language="javascript">
+function checkAll(frm, checkbox)
+{
+  for (i = 0; i < frm.elements.length; i++)
+  {
+    if (frm.elements[i].name == 'action_code[]' || frm.elements[i].name == 'chkGroup')
+    {
+      frm.elements[i].checked = checkbox.checked;
+    }
+  }
+}
+
+function check(list, obj)
+{
+  var frm = obj.form;
+
+    for (i = 0; i < frm.elements.length; i++)
+    {
+      if (frm.elements[i].name == "action_code[]")
+      {
+          var regx = new RegExp(frm.elements[i].value + "(?!_)", "i");
+
+          if (list.search(regx) > -1) {frm.elements[i].checked = obj.checked;}
+      }
+    }
+}
+
+function checkrelevance(relevance, priv_list)
+{
+  if(document.getElementById(priv_list).checked && relevance != '')
+  {
+    document.getElementById(relevance).checked=true;
+  }
+  else
+  {
+    var ts=document.getElementsByTagName("input");
+    
+    for (var i=0; i<ts.length;i++)
+    {
+      var text=ts[i].getAttribute("title");
+
+      if( text == priv_list) 
+      {
+        document.getElementById(ts[i].value).checked = false;
+      }
+    }
+  }
+}
+</script>
+
+<div id="footer">
+共执行 5 个查询，用时 0.110007 秒，Gzip 已禁用，内存占用 2.128 MB<br />
+版权所有 &copy; 2005-2012 上海商派网络科技有限公司，并保留所有权利。</div>
+<script type="text/javascript" src="../js/utils.js"></script><!-- 新订单提示信息 -->
+<div id="popMsg">
+  <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#cfdef4" border="0">
+  <tr>
+    <td style="color: #0f2c8c" width="30" height="24"></td>
+    <td style="font-weight: normal; color: #1f336b; padding-top: 4px;padding-left: 4px" valign="center" width="100%"> 新订单通知</td>
+    <td style="padding-top: 2px;padding-right:2px" valign="center" align="right" width="19"><span title="关闭" style="cursor: hand;cursor:pointer;color:red;font-size:12px;font-weight:bold;margin-right:4px;" onclick="Message.close()" >×</span><!-- <img title=关闭 style="cursor: hand" onclick=closediv() hspace=3 src="msgclose.jpg"> --></td>
+  </tr>
+  <tr>
+    <td style="padding-right: 1px; padding-bottom: 1px" colspan="3" height="70">
+    <div id="popMsgContent">
+      <p>您有 <strong style="color:#ff0000" id="spanNewOrder">1</strong> 个新订单以及       <strong style="color:#ff0000" id="spanNewPaid">0</strong> 个新付款的订单</p>
+      <p align="center" style="word-break:break-all"><a href="order.php?act=list"><span style="color:#ff0000">点击查看新订单</span></a></p>
+    </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<!--
+<embed src="images/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+-->
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
+  <param name="movie" value="images/online.swf">
+  <param name="quality" value="high">
+  <embed src="images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
+  </embed>
+</object>
+
+<import type="js" file="js.tables.js" basepath="{$Think.const.ADMIN_RES_PATH}" />
+
+</body>
+</html>

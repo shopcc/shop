@@ -1,0 +1,81 @@
+<extend name="Member:member_center" />
+<block name="title">订单列表</block>
+<block name="right">
+  <div class="AreaR">
+    <div class="box">
+     <div class="box_1">
+      <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
+         
+              <h5><span>我的订单</span></h5>
+       <div class="blank"></div>
+       <table width="100%" border="0" cellpadding="5" id="order_list" cellspacing="1" bgcolor="#dddddd">
+          <tr align="center">
+            <td bgcolor="#ffffff">订单号</td>
+            <td bgcolor="#ffffff">下单时间</td>
+            <td bgcolor="#ffffff">订单总金额</td>
+            <td bgcolor="#ffffff">订单状态</td>
+            <td bgcolor="#ffffff">操作</td>
+          </tr>
+            <foreach name="order" item="vo">
+            <tr>
+            <td align="center" bgcolor="#ffffff"><a href="{:U('order/detail',array('order_id'=>$vo['order_id']))}" class="f6">{$vo.order_sn}</a></td>
+            <td align="center" bgcolor="#ffffff">{$vo['order_time']|date="Y-m-d H:i:s",###}</td>
+            <td align="right" bgcolor="#ffffff">￥{$vo.order_amount}元</td>
+            <td align="center" bgcolor="#ffffff">{:L('order_status_'.$vo['order_status'])}</td>
+            <td align="center" bgcolor="#ffffff"><font class="f6"><a href="user.php?act=cancel_order&order_id=20" onclick="if (!confirm('您确认要取消该订单吗？取消后此订单将视为无效订单')) return false;">取消订单</a></font></td>
+          </tr>
+          </foreach>
+          </table>
+        <div class="blank5"></div>
+    
+
+
+<!--  <div id="pager" class="pagebar">
+  <span class="f_l " style="margin-right:10px;">总计 <b>1</b>  个记录</span>
+      
+      </div> -->
+
+
+<script type="Text/Javascript" language="JavaScript">
+<!--
+
+function selectPage(sel)
+{
+  sel.form.submit();
+}
+
+$(document).ready(function(){
+  $.post('{:U('order/data_order')}',{},function(data){
+      $('#order_list').html(data);
+  });
+});
+//-->
+//无刷新分页
+function showpage(page){
+  $.get(page,{},function(data){
+   $('#order_list').html(data);
+  })
+}
+function pay(order_id,status){
+  $.post("{:U('order/set_status')}",{orderid:order_id,order_status:status},function(data){
+      if(data.status){
+      window.location.reload();
+    }
+  });
+}
+
+function cancel(order_id){
+  $.post("{:U('order/set_status')}",{orderid:order_id,order_status:status},function(data){
+    if(data.status){
+      window.location.reload();
+    }
+  });
+}
+
+</script>
+<h5>&nbsp;</h5>
+</div>
+     </div>
+    </div>
+  </div>
+  </block>

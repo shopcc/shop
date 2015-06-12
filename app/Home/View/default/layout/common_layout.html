@@ -1,0 +1,28 @@
+
+ 
+ 
+<div class="blank"></div>
+<div class="block clearfix">
+  
+  <div class="AreaL">
+    
+  <div id="category_tree">
+  <div class="tit">所有商品分类</div>
+  <dl class="clearfix" >
+   <div class="box1 cate" id="cate">
+   <volist name="cate" id="vo"  >
+		<h1 onclick="tab({$i-1})" <if condition="$i eq 0">style="border-top:none"</if>>
+		<span class="f_l"><img src="{$Think.const.RESOURCE}/images/btn_fold.gif" style="padding-top:10px;padding-right:6px;cursor:pointer;"></span>
+		<a href="{$vo.url}" class="  f_l">{$vo.cat_name}</a>
+		</h1>
+		<ul style="display:none" >
+		<foreach name="vo.cat_id" item="v1">
+				<a class="over_2" href="{$v1.url}">{$v1.cat_name}</a>  
+		 		<div class="clearfix"></div>   
+		</foreach>
+		</ul>
+		<div style="clear:both"></div>
+		</volist>
+</div>
+<div style="clear:both"></div>  
+</div>  

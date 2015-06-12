@@ -1,0 +1,61 @@
+[ 2015-05-08T00:15:21+08:00 ] 127.0.0.1 /user.php?act=order_detail&order_id=20
+ERR: 无法加载控制器:User.php
+
+[ 2015-05-08T00:15:21+08:00 ] 127.0.0.1 /user.php?act=order_detail&order_id=20
+ERR: 无法加载控制器:User.php
+
+[ 2015-05-08T08:42:57+08:00 ] 127.0.0.1 /
+ERR: SQLSTATE[HY000] [2002] ����Ŀ�����������ܾ����޷����ӡ�
+
+
+[ 2015-05-08T08:43:11+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-08T08:43:24+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-08T08:43:25+08:00 ] 127.0.0.1 /category.php?id=2
+ERR: 无法加载控制器:Category.php
+
+[ 2015-05-08T08:44:04+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-08T08:44:07+08:00 ] 127.0.0.1 /captcha.php?1983991728
+ERR: 无法加载控制器:Captcha.php
+
+[ 2015-05-08T08:44:07+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-08T08:54:04+08:00 ] 127.0.0.1 /null
+ERR: 无法加载控制器:Null
+
+[ 2015-05-08T08:54:21+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-08T08:54:24+08:00 ] 127.0.0.1 /captcha.php?1983991728
+ERR: 无法加载控制器:Captcha.php
+
+[ 2015-05-08T08:56:29+08:00 ] 127.0.0.1 /captcha.php?1983991728
+ERR: 无法加载控制器:Captcha.php
+
+[ 2015-05-08T08:56:37+08:00 ] 127.0.0.1 /flow.php
+ERR: 无法加载控制器:Flow.php
+
+[ 2015-05-08T08:56:40+08:00 ] 127.0.0.1 /captcha.php?1983991728
+ERR: 无法加载控制器:Captcha.php
+
+[ 2015-05-08T09:19:57+08:00 ] 127.0.0.1 /captcha.php?1983991728
+ERR: 无法加载控制器:Captcha.php
+
+[ 2015-05-08T09:19:57+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-08T09:20:04+08:00 ] 127.0.0.1 /user.php?act=bonus
+ERR: 无法加载控制器:User.php
+
+[ 2015-05-08T09:30:37+08:00 ] 127.0.0.1 /user.php?act=order_list
+ERR: 无法加载控制器:User.php
+
+[ 2015-05-08T09:30:40+08:00 ] 127.0.0.1 /tag_cloud.php
+ERR: 无法加载控制器:Tag_cloud.php
+

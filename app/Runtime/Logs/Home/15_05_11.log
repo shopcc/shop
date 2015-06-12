@@ -1,0 +1,381 @@
+[ 2015-05-11T00:58:08+08:00 ] 127.0.0.1 /address-address_list.html
+ERR: SQLSTATE[HY000] [2002] ����Ŀ�����������ܾ����޷����ӡ�
+
+
+[ 2015-05-11T10:34:30+08:00 ] 127.0.0.1 /member-index.html
+ERR: SQLSTATE[HY000] [2002] ����Ŀ�����������ܾ����޷����ӡ�
+
+
+[ 2015-05-11T15:42:02+08:00 ] 127.0.0.1 /
+ERR: SQLSTATE[HY000] [2002] ����Ŀ�����������ܾ����޷����ӡ�
+
+
+[ 2015-05-11T15:42:46+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T15:43:01+08:00 ] 127.0.0.1 /category.php?id=2
+ERR: 无法加载控制器:Category.php
+
+[ 2015-05-11T15:45:13+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T15:45:16+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T15:45:17+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T15:46:26+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T15:46:27+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T15:48:56+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T15:49:24+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T15:49:28+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T15:54:08+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T15:58:07+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T15:58:08+08:00 ] 127.0.0.1 /category-goods-cid-2.html
+ERR: 非法操作:goods
+
+[ 2015-05-11T16:17:16+08:00 ] 127.0.0.1 /index.php?m=home&c=category&a=goods
+ERR: 参数错误或者未定义:cid
+
+[ 2015-05-11T16:21:22+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:21:29+08:00 ] 127.0.0.1 /category/2.html
+ERR: 无法加载控制器:Category/2
+
+[ 2015-05-11T16:22:15+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T16:22:20+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:24:59+08:00 ] 127.0.0.1 /category-1
+ERR: 非法操作:1
+
+[ 2015-05-11T16:25:07+08:00 ] 127.0.0.1 /category/id/1
+ERR: 无法加载控制器:Category/id/1
+
+[ 2015-05-11T16:25:16+08:00 ] 127.0.0.1 /category/-id-1
+ERR: 无法加载控制器:Category/
+
+[ 2015-05-11T16:25:22+08:00 ] 127.0.0.1 /category-id-1
+ERR: 非法操作:id
+
+[ 2015-05-11T16:25:27+08:00 ] 127.0.0.1 /category-cid-1
+ERR: 非法操作:cid
+
+[ 2015-05-11T16:26:55+08:00 ] 127.0.0.1 /category-cid
+ERR: 非法操作:cid
+
+[ 2015-05-11T16:31:21+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:33:20+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:33:21+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:34:24+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:34:25+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:34:26+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:34:28+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:34:28+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:34:28+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:34:29+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:34:53+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:34:53+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:34:53+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:35:15+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:35:16+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:35:16+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:35:16+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:35:16+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:35:22+08:00 ] 127.0.0.1 /category
+ERR: 非法操作:index
+
+[ 2015-05-11T16:35:27+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:36:46+08:00 ] 127.0.0.1 /c-2.html
+ERR: 无法加载控制器:C
+
+[ 2015-05-11T16:37:57+08:00 ] 127.0.0.1 /c-2.html
+ERR: 无法加载控制器:C
+
+[ 2015-05-11T16:37:57+08:00 ] 127.0.0.1 /c-2.html
+ERR: 无法加载控制器:C
+
+[ 2015-05-11T16:38:44+08:00 ] 127.0.0.1 /news/1.html
+ERR: 无法加载控制器:News/1
+
+[ 2015-05-11T16:39:29+08:00 ] 127.0.0.1 /news/1.html
+ERR: 无法加载控制器:Article
+
+[ 2015-05-11T16:39:29+08:00 ] 127.0.0.1 /news/1.html
+ERR: 无法加载控制器:Article
+
+[ 2015-05-11T16:40:08+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T16:40:11+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T16:40:12+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T16:42:40+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T16:42:43+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T16:42:58+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T16:42:59+08:00 ] 127.0.0.1 /category-cid-2.html
+ERR: 非法操作:cid
+
+[ 2015-05-11T16:43:14+08:00 ] 127.0.0.1 /category-2.html
+ERR: 非法操作:2
+
+[ 2015-05-11T16:43:20+08:00 ] 127.0.0.1 /new/1
+ERR: 无法加载控制器:New/1
+
+[ 2015-05-11T16:43:33+08:00 ] 127.0.0.1 /new/1
+ERR: 无法加载控制器:New/1
+
+[ 2015-05-11T16:43:34+08:00 ] 127.0.0.1 /new/1
+ERR: 无法加载控制器:New/1
+
+[ 2015-05-11T16:43:39+08:00 ] 127.0.0.1 /news/1.html
+ERR: 无法加载控制器:Article
+
+[ 2015-05-11T16:43:40+08:00 ] 127.0.0.1 /news/1.html
+ERR: 无法加载控制器:Article
+
+[ 2015-05-11T16:43:40+08:00 ] 127.0.0.1 /news/1.html
+ERR: 无法加载控制器:Article
+
+[ 2015-05-11T16:43:40+08:00 ] 127.0.0.1 /news/1.html
+ERR: 无法加载控制器:Article
+
+[ 2015-05-11T16:43:41+08:00 ] 127.0.0.1 /news/1.html
+ERR: 无法加载控制器:Article
+
+[ 2015-05-11T16:43:41+08:00 ] 127.0.0.1 /news/1.html
+ERR: 无法加载控制器:Article
+
+[ 2015-05-11T16:44:06+08:00 ] 127.0.0.1 /category/
+ERR: 非法操作:index
+
+[ 2015-05-11T16:44:12+08:00 ] 127.0.0.1 /category-1.html
+ERR: 非法操作:1
+
+[ 2015-05-11T16:44:19+08:00 ] 127.0.0.1 /category-1.html
+ERR: 非法操作:1
+
+[ 2015-05-11T16:44:29+08:00 ] 127.0.0.1 /c-1.html
+ERR: 无法加载控制器:C
+
+[ 2015-05-11T16:44:42+08:00 ] 127.0.0.1 /c-1.html
+ERR: 无法加载控制器:C
+
+[ 2015-05-11T16:45:19+08:00 ] 127.0.0.1 /c-1.html
+ERR: 无法加载控制器:C
+
+[ 2015-05-11T16:49:00+08:00 ] 127.0.0.1 /category/cid/1
+ERR: 无法加载控制器:Category/cid/1
+
+[ 2015-05-11T16:49:16+08:00 ] 127.0.0.1 /category/1
+ERR: 无法加载控制器:Category/1
+
+[ 2015-05-11T16:52:46+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T16:52:54+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T16:53:20+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T16:53:37+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T16:53:41+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T16:56:34+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T16:56:35+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T17:03:42+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T17:25:22+08:00 ] 127.0.0.1 /category/category.php?id=2
+ERR: 无法加载控制器:Category/category.php
+
+[ 2015-05-11T17:27:56+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T17:28:11+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T17:30:10+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T17:37:41+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T17:37:54+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T17:38:12+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T17:42:13+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T17:44:23+08:00 ] 127.0.0.1 /category/index.php
+ERR: 无法加载控制器:Category/index.php
+
+[ 2015-05-11T17:44:45+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T17:45:33+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T17:45:33+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T19:01:39+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T19:01:39+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T19:02:07+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T19:02:09+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T19:02:11+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T20:08:03+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T20:08:03+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T20:11:54+08:00 ] 127.0.0.1 /category-cid-19.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2015-05-11T20:12:22+08:00 ] 127.0.0.1 /category-cid-19.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2015-05-11T20:12:47+08:00 ] 127.0.0.1 /category-cid-19.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2015-05-11T20:16:24+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T20:16:24+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T20:16:28+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T20:17:22+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T20:17:26+08:00 ] 127.0.0.1 /category.php?id=4
+ERR: 无法加载控制器:Category.php
+
+[ 2015-05-11T20:17:35+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T20:18:07+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T20:18:13+08:00 ] 127.0.0.1 /category.php?id=4
+ERR: 无法加载控制器:Category.php
+
+[ 2015-05-11T20:22:59+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T20:23:07+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T22:16:14+08:00 ] 127.0.0.1 /category-cid-1.html&good=1
+ERR: Think\Controller:field方法不存在！
+
+[ 2015-05-11T22:18:07+08:00 ] 127.0.0.1 /category-cid-1.html&good=1
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column '$ids' in 'where clause'
+
+[ 2015-05-11T22:18:44+08:00 ] 127.0.0.1 /category-cid-1.html&good=1
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column '$ids' in 'where clause'
+
+[ 2015-05-11T22:54:30+08:00 ] 127.0.0.1 /category-cid-12.html
+ERR: XML标签语法错误 : name=$brands item="brand"
+
+[ 2015-05-11T23:11:03+08:00 ] 127.0.0.1 /data/resource/css/images/qq.css
+ERR: 无法加载控制器:Data/resource/css/images/qq.css
+
+[ 2015-05-11T23:31:09+08:00 ] 127.0.0.1 /data/resource/images/zoomin.cur
+ERR: 无法加载控制器:Data/resource/images/zoomin.cur
+
+[ 2015-05-11T23:31:12+08:00 ] 127.0.0.1 /category.php?id=4
+ERR: 无法加载控制器:Category.php
+
+[ 2015-05-11T23:31:13+08:00 ] 127.0.0.1 /category.php?id=4
+ERR: 无法加载控制器:Category.php
+

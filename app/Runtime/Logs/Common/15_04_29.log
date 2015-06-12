@@ -1,0 +1,6 @@
+[ 2015-04-29T13:44:55+08:00 ] 127.0.0.1 /index.php?m=Admin/Type/edit&c=type_id&a=2
+ERR: 无法加载模块:Admin/Type/edit
+
+[ 2015-04-29T13:45:07+08:00 ] 127.0.0.1 /index.php?m=Admin/Goods/edit&c=goods_id&a=1
+ERR: 无法加载模块:Admin/Goods/edit
+

@@ -1,0 +1,33 @@
+[ 2015-05-21T18:37:30+08:00 ] 127.0.0.1 /category-cid-16.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) ORDER BY g.goods_id desc LIMIT 0,12' at line 1
+
+[ 2015-05-21T18:42:17+08:00 ] 127.0.0.1 /category-cid-16.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) LIMIT 1' at line 1
+
+[ 2015-05-21T18:42:37+08:00 ] 127.0.0.1 /category-cid-16.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) ORDER BY g.goods_id desc LIMIT 0,12' at line 1
+
+[ 2015-05-21T18:45:07+08:00 ] 127.0.0.1 /none
+ERR: 无法加载控制器:None
+
+[ 2015-05-21T18:45:48+08:00 ] 127.0.0.1 /category-cid-16.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) ORDER BY g.goods_id desc LIMIT 0,12' at line 1
+
+[ 2015-05-21T18:46:12+08:00 ] 127.0.0.1 /category-cid-16.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) LIMIT 1' at line 1
+
+[ 2015-05-21T18:51:21+08:00 ] 127.0.0.1 /none
+ERR: 无法加载控制器:None
+
+[ 2015-05-21T18:51:27+08:00 ] 127.0.0.1 /none
+ERR: 无法加载控制器:None
+
+[ 2015-05-21T18:51:42+08:00 ] 127.0.0.1 /js/showdiv.js
+ERR: 无法加载控制器:Js/showdiv.js
+
+[ 2015-05-21T18:51:42+08:00 ] 127.0.0.1 /js/showdiv.js
+ERR: 无法加载控制器:Js/showdiv.js
+
+[ 2015-05-21T18:51:48+08:00 ] 127.0.0.1 /none
+ERR: 无法加载控制器:None
+

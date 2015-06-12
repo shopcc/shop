@@ -1,0 +1,146 @@
+<include file="Public/header" />
+<import type="js" file="js.user" basepath="{$Think.const.RESOURCE}"/>
+<div style="clear: both"></div>
+
+<include file="layout/layout" />
+<div class="block box">
+	<div class="blank"></div>
+	<block name="ur_here">
+		<div id="ur_here">
+			当前位置:
+			<a href=".">首页</a>
+			<code>&gt;</code>
+			用户中心
+		</div>
+	</block>
+</div>
+<div class="blank"></div>
+<div class="block clearfix">
+
+	<div class="AreaL">
+		<div class="box">
+			<div class="box_1">
+				<div class="userCenterBox">
+
+					<div class="userMenu">
+						<a href="{:U('member/index')}" <if
+								condition="ACTION_NAME eq 'index'">class="curs"</if>
+						>
+						<img
+							src="{$Think.const.RESOURCE}/images/u1.gif">欢迎页</a>
+					<a
+							href="{:U('member/profile')}" <if
+								condition="ACTION_NAME eq 'profile'">class="curs"</if>
+					>
+					<img
+							src="{$Think.const.RESOURCE}/images/u2.gif">用户信息</a>
+				<a
+							href="{:U('order/order_list')}" <if
+								condition="ACTION_NAME eq 'order_list'">class="curs"</if>
+				>
+				<img
+							src="{$Think.const.RESOURCE}/images/u3.gif">我的订单</a>
+			<a
+							href="{:U('address/address_list')}" <if
+								condition="ACTION_NAME eq 'address_list'">class="curs"</if>
+			>
+			<img
+							src="{$Think.const.RESOURCE}/images/u4.gif">收货地址</a>
+		<!-- <a
+							href="user.php?act=collection_list">
+			<img
+							src="{$Think.const.RESOURCE}/images/u5.gif">我的收藏</a>
+		<a
+							href="user.php?act=message_list">
+			<img
+							src="{$Think.const.RESOURCE}/images/u6.gif">我的留言</a>
+		<a
+							href="user.php?act=tag_list">
+			<img
+							src="{$Think.const.RESOURCE}/images/u7.gif">我的标签</a>
+		<a
+							href="user.php?act=affiliate">
+			<img
+							src="{$Think.const.RESOURCE}/images/u10.gif">我的推荐</a> -->
+		<a
+							href="{:U('comment/get_user_comment')}">
+			<img
+							src="{$Think.const.RESOURCE}/images/u11.gif">我的评论</a>
+		<a
+							<!-- href="user.php?act=account_log">
+			<img
+							src="{$Think.const.RESOURCE}/images/u13.gif">资金管理</a> -->
+		<a
+							href="{:U('member/logout')}"
+							style="background: none; text-align: right; margin-right: 10px;">
+			<img
+							src="{$Think.const.RESOURCE}/images/bnt_sign.gif"></a>
+	</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<block name="right">
+<div class="AreaR">
+<div class="box">
+<div class="box_1">
+	<div class="userCenterBox boxCenterList clearfix"
+					style="_height: 1%;"> <font class="f5"><b class="f4">hao123</b>
+			欢迎您回到 {:L('welcome')}</font> 
+		<br />
+		<div class="blank"></div>
+		您的上一次登录时间: 2015-04-23 15:13:46
+		<br />
+		<div class="blank5"></div>
+		您的等级是 注册用户
+		<br />
+		<div class="blank5"></div>
+		您还没有通过邮件认证
+		<a href="javascript:sendHashMail()"
+						style="color: #006bd0;">点此发送认证邮件</a>
+		<br />
+		<div
+						style="margin: 5px 0; border: 1px solid #f7dd98; padding: 10px 20px; background-color: #fffad5;">
+			<img src="{$Think.const.RESOURCE}/images/note.gif" alt="note" />
+			&nbsp;用户中心公告！
+		</div>
+		<br />
+		<br />
+		<div class="f_l" style="width: 350px;">
+			<h5>
+				<span>{:L('your_account')}</span>
+			</h5>
+			<div class="blank"></div>
+			余额:
+			<a href="user.php?act=account_log" style="color: #006bd0;">￥0.00元</a>
+			<br />
+			红包:
+			<a href="user.php?act=bonus" style="color: #006bd0;">
+				共计 0
+							个,价值 ￥0.00元
+			</a>
+			<br />
+			积分:0积分
+			<br />
+		</div>
+		<div class="f_r" style="width: 350px;">
+			<h5>
+				<span>{:L('user_tips')}</span>
+			</h5>
+			<div class="blank"></div>
+			您最近30天内提交了1个订单
+			<br />
+		</div>
+
+		<div class="blank5"></div>
+
+	</div>
+</div>
+</div>
+</div>
+</block>
+</div>
+<div class="blank10"></div>
+<include file="Public/footer" />

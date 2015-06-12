@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta name="Keywords" content="LG 3g 876 支持 双模 2008年04月 灰色 GSM,850,900,1800,1900" />
+<meta name="Description" content="" />
+<title>跳转提示</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<import type="css" file="css.style" basepath="{$Think.const.RESOURCE}"/>
+<!-- <load href="{$Think.const.RESOURCE}/assets/css/amazeui.min.css"/> -->
+
+<!-- <load href="{$Think.const.RESOURCE}/assets/js/amazeui.min.js" -->
+<load href="{$Think.const.RESOURCE}/js/jquery.js"/>
+ <script type="text/javascript">
+  $(document).ready(function(){
+    $.post('{:U('cart/getnum')}',{},function(data){
+      console.log(data);
+    });
+  });
+  </script>
+</head>
+<body>
+
+<import type="css" file="qq.images.qq" basepath="{$Think.const.RESOURCE}"/>
+<import type="js" file="js.utils" basepath="{$Think.const.RESOURCE}"/> 
+  <div id="Head">
+  <div id="headerTopArea" class="headerTopAreaBox">
+    <div class="headerTopArea">
+      <div class="headerTop">
+        <div class="headerTopLeft">
+          <div id="ECS_MEMBERZONE" class="loginArea"><div id="append_parent"></div>
+		  <if condition="$Think.session.user_id neq ''">
+您好, <a style="color: rgb(51, 51, 51);" class="top track" href="user.php">hao123</a> <span style="color: #a10000"><a target="_parent" href="user.php?act=logout" style="color: #a10000" class="top track">退出登录</a></span>
+        <else/>
+欢迎光临本店<span><a href="{:U('member/login')}" class="track">[&nbsp;登录&nbsp;</a>|<a href="user.php?act=register" class="track">&nbsp;免费注册&nbsp;]</a></span>
+		</if>
+</div>
+          <div class="recommendArea"><a class="track" href="user.php?act=order_list">我的订单</a><a href="javascript:bookmark();" id="vanclFavorite">收藏本站</a></div>
+        </div>
+        <div class="headerTopRight">
+          <div id="vanclMap" ><a href="user.php" target="_blank">我的京东</a>
+            
+          </div>
+          
+           
+                    <div id="vanclMap"><a href="flow.php" class="mapDropTitle track mapTitle" >查看购物车</a></div>
+                    <div id="vanclMap"><a href="pick_out.php" class="mapDropTitle track mapTitle" >选购中心</a></div>
+                    <div id="vanclMap"><a href="tag_cloud.php" class="mapDropTitle track mapTitle" >标签云</a></div>
+                    <div id="vanclMap"><a href="quotation.php" class="mapDropTitle track mapTitle" >报价单</a></div>
+           
+                    
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="LogoSearchBar" id="logoArea">
+    <div class="logoSearchSubnavArea">
+      <h1 class="logoArea"><a href="index.php" class="track"><img src="{$Think.const.RESOURCE}/images/logo.gif" /></a></h1>
+      <div class="searchAreaBlock">
+        <div class="searchLeft">
+          <ul id="searchBar" class="searchBar">
+          </ul>
+          <div class="searchInt">
+            <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()">
+              <input name="keywords" type="text" id="keyword" value="" class="searchText ac_input" />
+              <input type="submit" value="搜索" name="imageField" class="searchBtn" style="cursor:pointer;">
+            </form>
+          </div>
+           </div>
+        <div class="menuTopRight">
+          <div id="shoppingCarNone" class="active"> <p><a class="shopborder track" href="flow.php" id="shoppingcar_link">购物车(<span car_product_total="shoppingCar_product_totalcount">0</span>)件</a><s></s></p>
+<div class="shopDropList"> 
+    <div class="shopnopru">
+    <div class="SCtotalpageno">您的购物车中没有任何商品</div>
+    <div class="SCtotalpageBottom"></div>
+  </div>
+   </div>
+ </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>

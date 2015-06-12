@@ -1,0 +1,216 @@
+<include file="Public/header"/>
+<div style="clear:both"></div>
+<include file="layout/layout"/>
+<div class="block box">
+  <div class="blank"></div>
+  <div id="ur_here">
+    当前位置:
+    <a href=".">首页</a>
+    <code>&gt;</code>
+    购物流程
+  </div>
+</div>
+<div class="blank"></div>
+
+<div class="block table">
+
+  <form action="{:U('cart/done')}" method="post" name="theForm" id="theForm" onsubmit="return checkOrderForm(this)">
+    <script type="text/javascript">
+        var flow_no_payment = "您必须选定一个支付方式。";
+        var flow_no_shipping = "您必须选定一个配送方式。";
+        </script>
+    <div class="flowBox">
+      <h6>
+        <span>商品列表</span>
+      </h6>
+      <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <tr>
+          <th bgcolor="#ffffff">商品名称</th>
+          <th bgcolor="#ffffff">属性</th>
+          <th bgcolor="#ffffff">市场价</th>
+          <th bgcolor="#ffffff">本店价</th>
+          <th bgcolor="#ffffff">购买数量</th>
+          <th bgcolor="#ffffff">小计</th>
+        </tr>
+        <foreach name="cart_list" item="vo">
+        <tr>
+          <td bgcolor="#ffffff">
+            <a href="{:U('goods/detail',array('id'=>$vo['goods_id']))}" target="_blank" class="f6">{$vo.goods_name}</a>
+          </td>
+
+          <td bgcolor="#ffffff">
+            {$vo.goods_attr}
+            <br />
+          </td>
+          <td align="right" bgcolor="#ffffff">￥{$vo.market_price}元</td>
+          <td bgcolor="#ffffff" align="right">￥{$vo.goods_price}元</td>
+          <td bgcolor="#ffffff" align="right">{$vo.goods_number}</td>
+          <td bgcolor="#ffffff" align="right">￥{$vo.goods_price}元</td>
+        </tr>
+      </foreach>
+        <tr>
+          <td bgcolor="#ffffff" colspan="7">购物金额小计 ￥{$price['total_goods']|default="0.00"}元，比市场价 ￥{$price['total_market']|default="0.00"}元 节省了 ￥{$price['total_market']-$price['total_goods']}元 ({$price['per']|default="0.00"}%)</td>
+        </tr>
+      </table>
+    </div>
+    <div class="blank"></div>
+    <div class="flowBox">
+      <h6>
+        <span>收货人信息</span>
+        <a href="{:U('cart/consignee')}" class="f6">修改</a>
+      </h6>
+      <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <tr>
+          <td bgcolor="#ffffff">收货人姓名:</td>
+          <td bgcolor="#ffffff">{$address.consignee}</td>
+          <td bgcolor="#ffffff">电子邮件地址:</td>
+          <td bgcolor="#ffffff">{$address.email}</td>
+        </tr>
+        <tr>
+          <td bgcolor="#ffffff">详细地址:</td>
+          <td bgcolor="#ffffff">{$address.address_info}{$arress.street}</td>
+          <td bgcolor="#ffffff">邮政编码:</td>
+          <td bgcolor="#ffffff">{$address.zipcode}</td>
+        </tr>
+        <tr>
+          <td bgcolor="#ffffff">电话:</td>
+          <td bgcolor="#ffffff">{$address.telephone}</td>
+          <td bgcolor="#ffffff">手机:</td>
+          <td bgcolor="#ffffff">{$address.mobile}</td>
+        </tr>
+        <tr>
+          <td bgcolor="#ffffff">标志建筑:</td>
+          <td bgcolor="#ffffff">{$address.sign_building}</td>
+          <td bgcolor="#ffffff">最佳送货时间:</td>
+          <td bgcolor="#ffffff">{$address.best_time}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="blank"></div>
+    <div class="flowBox">
+      <h6>
+        <span>配送方式</span>
+      </h6>
+      <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="shippingTable">
+        <tr>
+          <th bgcolor="#ffffff" width="5%">&nbsp;</th>
+          <th bgcolor="#ffffff" width="25%">名称</th>
+          <th bgcolor="#ffffff">订购描述</th>
+          <th bgcolor="#ffffff" width="15%">费用</th>
+          <th bgcolor="#ffffff" width="15%">免费额度</th>
+          <th bgcolor="#ffffff" width="15%">保价费用</th>
+        </tr>
+        <foreach name="shipping" item="vo">
+        <tr>
+          <td bgcolor="#ffffff" valign="top">
+            <input name="shipping" type="radio" value="{$vo.shipping_id}" onclick="selectShipping(this)" supportCod="0" insure="0"/>
+          </td>
+          <td bgcolor="#ffffff" valign="top"> <strong>{$vo.shipping_name}</strong>
+          </td>
+          <td bgcolor="#ffffff" valign="top">{$vo.shipping_desc}</td>
+          <td bgcolor="#ffffff" align="right" valign="top">￥{$vo.shipping_fee}元</td>
+          <td bgcolor="#ffffff" align="right" valign="top">￥0.00元</td>
+          <td bgcolor="#ffffff" align="right" valign="top">不支持保价</td>
+        </tr>
+      </foreach>
+      </table>
+    </div>
+    <div class="blank"></div>
+    <div class="flowBox">
+      <h6>
+        <span>支付方式</span>
+      </h6>
+      <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="paymentTable">
+        <tr>
+          <th width="5%" bgcolor="#ffffff">&nbsp;</th>
+          <th width="20%" bgcolor="#ffffff">名称</th>
+          <th bgcolor="#ffffff">订购描述</th>
+          <th bgcolor="#ffffff" width="15%">手续费</th>
+        </tr>
+        <foreach name="payment" item="vo">
+        <tr>
+          <td valign="top" bgcolor="#ffffff">
+            <input type="radio" name="payment" value="{$vo.pay_id}"  isCod="0" />
+          </td>
+          <td valign="top" bgcolor="#ffffff">
+            <strong>{$vo.pay_name}</strong>
+          </td>
+          <td valign="top" bgcolor="#ffffff">{$vo.pay_desc}</td>
+          <td align="right" bgcolor="#ffffff" valign="top">￥0.00元</td>
+        </tr>
+      </foreach>
+      </table>
+    </div>
+    <div class="blank"></div>
+
+    <div class="flowBox">
+      <h6>
+        <span>其它信息</span>
+      </h6>
+      <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <tr>
+          <td valign="top" bgcolor="#ffffff">
+            <p>&nbsp;</p>
+            <p>
+              <strong>订单附言:</strong>
+            </p>
+          </td>
+          <td bgcolor="#ffffff">
+            <textarea name="postscript" cols="80" rows="3" id="postscript" style="border:1px solid #ccc;"></textarea>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="blank"></div>
+    <div class="flowBox">
+      <h6>
+        <span>费用总计</span>
+      </h6>
+      <div id="ECS_ORDERTOTAL">
+        <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          <tr>
+            <td align="right" bgcolor="#ffffff">
+              商品总价:
+              <font class="f4_b">￥{$price['total_goods']|default="0.00"}元</font>
+            </td>
+          </tr>
+          <tr>
+            <td align="right" bgcolor="#ffffff">
+              应付款金额:
+              <font id="f4_b" class="f4_b"></font>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div align="center" style="margin:8px auto;">
+        <input type="image" src="{$Think.const.RESOURCE}/images/bnt_subOrder.gif" />
+        <input type="hidden" name="step" value="done" />
+        <input type="hidden" name="address_id" value="{$address.address_id}" />
+        <input type="hidden" name="order_price" id="order_price" value=""/>
+        <input type="hidden" name="goods_price" value="{$price['total_goods']|default="0.00"}"/>
+      </div>
+    </div>
+  </form>
+
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+   var g_p = $("input[name='goods_price']").val();
+    $('#f4_b').html("￥"+g_p+"元");
+    $('#order_price').val(g_p);
+    $("input[name='shipping']:first").prop('checked',true);
+    $("input[name='payment']:first").prop('checked',true);
+
+  })
+  function selectShipping(tmp)
+  {
+    var shipping_id = $(tmp).val()
+     $.post('{:U('cart/shipping_price')}',{shipping_id:shipping_id},function(data){
+        var t_p = parseInt($("input[name='goods_price']").val()) + parseInt(data);
+        $('#f4_b').html("￥"+t_p+"元");
+        $('#order_price').val(t_p);
+     })
+  }
+</script>
+<div class="blank10"></div>
+<include file="Public/footer"/>

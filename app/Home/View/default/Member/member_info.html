@@ -1,0 +1,128 @@
+<extend name="Member:member_center" />
+
+<block name="ur_here">
+ <div id="ur_here">
+当前位置: <a href=".">首页</a> <code>&gt;</code> 用户中心 
+</div>
+</block>
+
+  <block name="right">
+  <div class="AreaR">
+    <div class="box">
+     <div class="box_1">
+      <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
+         
+                          <script type="text/javascript">
+                      var bonus_sn_empty = "请输入您要添加的红包号码！";
+                      var bonus_sn_error = "您输入的红包号码格式不正确！";
+                      var email_empty = "请输入您的电子邮件地址！";
+                      var email_error = "您输入的电子邮件地址格式不正确！";
+                      var old_password_empty = "请输入您的原密码！";
+                      var new_password_empty = "请输入您的新密码！";
+                      var confirm_password_empty = "请输入您的确认密码！";
+                      var both_password_error = "您现两次输入的密码不一致！";
+                      var msg_blank = "不能为空";
+                      var no_select_question = "- 您没有完成密码提示问题的操作";
+                  </script>
+      <h5><span>个人资料</span></h5>
+      <div class="blank"></div>
+     <form name="formEdit" action="{:U('member/saveinfo')}" method="post" onSubmit="return userEdit()">
+      <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+                <tr>
+                  <td width="28%" align="right" bgcolor="#FFFFFF">出生日期： </td>
+                  <td width="72%" align="left" bgcolor="#FFFFFF"> 
+                  <select name="birthdayYear">
+                    <foreach name="birthday['year']"  item="v0">
+                      <option value="{$v0}" <if condition="$v0 eq $info['birthday'][0]">selected="selected"</if>>{$v0}</option>
+                    </foreach>
+                  </select>&nbsp;
+                  <select name="birthdayMonth">
+                    <foreach name="birthday['month']"  item="v0">
+                      <option value="{$v0}" <if condition="$v0 eq $info['birthday'][1]">selected="selected"</if>>{$v0}</option>
+                    </foreach>
+                  </select>&nbsp;
+                  <select name="birthdayDay">
+                    <foreach name="birthday['day']"  item="v0">
+                      <option value="{$v0}" <if condition="$v0 eq $info['birthday'][2]">selected="selected"</if>>{$v0}</option>
+                    </foreach>
+                  </select> </td>
+                </tr>
+                <tr>
+                  <td width="28%" align="right" bgcolor="#FFFFFF">性　别： </td>
+                  <td width="72%" align="left" bgcolor="#FFFFFF"><input type="radio" name="sex" value="0" <if condition="$info.sex eq 0">checked="checked" </if>/>
+                    保密&nbsp;&nbsp;
+                    <input type="radio" name="sex" value="1" <if condition="$info.sex eq 1">checked="checked" </if> />
+                    男&nbsp;&nbsp;
+                    <input type="radio" name="sex" value="2" <if condition="$info.sex eq 2">checked="checked"</if>/>
+                  女&nbsp;&nbsp; </td>
+                </tr>
+                <tr>
+                  <td width="28%" align="right" bgcolor="#FFFFFF">电子邮件地址： </td>
+                  <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" value="{$info.email|default=''}" size="25" class="inputBg" /><span style="color:#FF0000"> *</span></td>
+                </tr>
+                        <tr>
+           <td width="28%" align="right" bgcolor="#FFFFFF" id="msn">MSN：</td>
+            <td width="72%" align="left" bgcolor="#FFFFFF">
+            <input name="msn" type="text" class="inputBg" value="{$info.msn|default=''}"/><span style="color:#FF0000"> *</span>            </td>
+        </tr>
+        		                <tr>
+           <td width="28%" align="right" bgcolor="#FFFFFF" id="qq">QQ：</td>
+            <td width="72%" align="left" bgcolor="#FFFFFF">
+            <input name="qq" type="text" class="inputBg" value="{$info.qq|default=''}"/><span style="color:#FF0000"> *</span>            </td>
+        </tr>
+        		                <tr>
+           <td width="28%" align="right" bgcolor="#FFFFFF" id="mobile_phone">手机：</td>
+            <td width="72%" align="left" bgcolor="#FFFFFF">
+            <input name="mobile_phone" type="text" class="inputBg" value="{$info.mobile_phone|default=''}"/><span style="color:#FF0000"> *</span>            </td>
+        </tr>
+        		                <tr>
+          <td width="28%" align="right" bgcolor="#FFFFFF">密码提示问题：</td>
+          <td width="72%" align="left" bgcolor="#FFFFFF">
+          <select name='passwd_question'>
+          <option value='0'>请选择密码提示问题</option>        
+          <foreach name="question" item="vo">
+          <option value="{$vo.question}" <if condition="$vo.question eq $info['passwd_question']">selected="selected"</if>>{$vo.value}</option>
+          </foreach>
+          </select>
+          </td>
+        </tr>
+        <tr>
+       <td width="28%" align="right" bgcolor="#FFFFFF" id="passwd_quesetions">密码问题答案：</td>
+          <td width="72%" align="left" bgcolor="#FFFFFF">
+          <input name="passwd_answer" type="text" size="25" class="inputBg" maxlengt='20' value="{$info.passwd_answer|default=''}"/><span style="color:#FF0000"> *</span>          </td>
+        </tr>
+        		                <tr>
+                  <td colspan="2" align="center" bgcolor="#FFFFFF">
+                  <input name="act" type="hidden" value="act_edit_profile" />
+                    <input name="submit" type="submit" value="确认修改" class="bnt_blue_1" style="border:none;" />
+                  </td>
+                </tr>
+       </table>
+    </form>
+     <form name="formPassword" action="{:U('member/edit_password')}" method="post" onSubmit="return editPassword()" >
+     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <tr>
+          <td width="28%" align="right" bgcolor="#FFFFFF">原密码：</td>
+          <td width="76%" align="left" bgcolor="#FFFFFF"><input name="old_password" type="password" size="25"  class="inputBg" /></td>
+        </tr>
+        <tr>
+          <td width="28%" align="right" bgcolor="#FFFFFF">新密码：</td>
+          <td align="left" bgcolor="#FFFFFF"><input name="new_password" type="password" size="25"  class="inputBg" /></td>
+        </tr>
+        <tr>
+          <td width="28%" align="right" bgcolor="#FFFFFF">确认密码：</td>
+          <td align="left" bgcolor="#FFFFFF"><input name="comfirm_password" type="password" size="25"  class="inputBg" /></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center" bgcolor="#FFFFFF"><input name="act" type="hidden" value="act_edit_password" />
+            <input name="submit" type="submit" class="bnt_blue_1" style="border:none;" value="确认修改" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+      </div>
+     </div>
+    </div>
+  </div>
+  </block>

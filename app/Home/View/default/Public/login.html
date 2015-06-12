@@ -1,0 +1,58 @@
+<include file="Public/header"/>
+<import type="js" file="js.common" basepath="{$Think.const.RESOURCE}"/>
+<import type="js" file="js.user" basepath="{$Think.const.RESOURCE}"/>
+<import type="css" file="qq.images.qq" basepath="{$Think.const.RESOURCE}"/>
+
+<div style="clear:both"></div>
+ <include file="layout/layout"/>
+
+<div class="block block1">
+  <div class="block box">
+<div class="blank"></div>
+ <div id="ur_here">
+当前位置: <a href=".">首页</a> <code>&gt;</code> 用户中心 
+</div>
+</div>
+<div class="blank"></div>
+
+<div class="usBox clearfix">
+  <div class="usBox_1 f_l">
+    <div class="login_tab">
+    <ul>
+        <li class="active"><a href="{:U('member/login')}">用户登录</a></li>
+        <li ><a href="{:U('member/reg')}">用户注册</a></li>
+    </ul>
+    </div>
+   <form name="formLogin" action="{:U('member/logincheck')}" method="post" onSubmit="return userLogin()">
+        <table width="100%" border="0" align="left" cellpadding="3" cellspacing="5">
+          <tr>
+            <td width="25%" align="right">用户名</td>
+            <td width="65%"><input name="username" type="text" size="25" class="inputBg" /></td>
+          </tr>
+          <tr>
+            <td align="right">密码</td>
+            <td>
+            <input name="password" type="password" size="15"  class="inputBg"/>            </td>
+          </tr>
+                    <tr>
+            <td> </td>
+            <td><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember">请保存我这次的登录信息。</label></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align="left">
+            <input type="hidden" name="act" value="act_login" />
+            <input type="submit" name="submit" value="" class="us_Submit" />            </td>
+          </tr>
+	  <tr><td></td><td><a href="user.php?act=qpassword_name" class="f3">密码问题找回密码</a>&nbsp;&nbsp;&nbsp;<a href="user.php?act=get_password" class="f3">注册邮件找回密码</a></td></tr>
+      </table>
+    </form>
+    <div class="blank"></div>
+  </div>
+  
+  <div class="usTxt">
+  <a href="http://bbs.ecmoban.com" title="ecshop模板堂论坛 ecshop资源下载第一站" target="_blank"><img alt="ecshop模板堂论坛 ecshop资源下载第一站" src="{$Think.const.RESOURCE}/images/ecmoban.jpg" /></a>   </div>
+</div>
+</div>
+<div class="blank10"></div>
+<include file="Public/footer"/>

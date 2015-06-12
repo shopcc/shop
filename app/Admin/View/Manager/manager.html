@@ -1,0 +1,51 @@
+<include file="Public/header" />
+<body>
+<h1>
+<span class="action-span"><a href="__MODULE__/Manager/add">添加管理员</a></span>
+<span class="action-span1"><a href="__MODULE__/Index/index">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 管理员列表 </span>
+<div style="clear:both"></div>
+</h1>
+<import type="js" file="js.utils" basepath="{$Think.const.ADMIN_RES_PATH}" />
+<div class="list-div" id="listDiv">
+
+<table cellspacing='1' cellpadding='3' id='list-table'>
+  <tr>
+    <th>用户名</th>
+    <th>Email地址</th>
+    <th>加入时间</th>
+    <th>最后登录时间</th>
+    <th>操作</th>
+  </tr>
+  <foreach name="list" item="vo">
+    <tr>
+    <td class="first-cell" >{$vo.username}</td>
+    <td align="left">{$vo.email}</td>
+    <td align="center">{$vo.add_time|date='Y-m-d H:i:s',###}</td>
+    <td align="center">{$vo.last_time}</td>
+    <td align="center">
+      <a href="admin_logs.php?act=list&id=1" title="查看日志"><img src="{$Think.const.ADMIN_RES_PATH}/images/icon_view.gif" border="0" height="21" width="21"></a>&nbsp;&nbsp;
+      <a href="{:U('Manager/edit',array('admin_id'=>$vo['admin_id']))}" title="编辑"><img src="{$Think.const.ADMIN_RES_PATH}/images/icon_edit.gif" border="0" height="21" width="21"></a>&nbsp;&nbsp;
+      <a href="#" onclick="del(this,{$vo.admin_id})" title="移除"><img src="{$Think.const.ADMIN_RES_PATH}/images/icon_drop.gif" border="0" height="21" width="21"></a></td>
+  </tr>
+  </foreach>
+  </table>
+
+</div>
+
+<div id="footer">
+共执行 2 个查询，用时 0.026001 秒，Gzip 已禁用，内存占用 2.157 MB<br />
+版权所有 &copy; 2005-2012 上海商派网络科技有限公司，并保留所有权利。</div>
+<script>
+function del(tmp,adminid){
+	if(confirm('您确认要删除这条记录吗?')){
+		$.post("{:U('Manager/del')}",{admin_id:adminid},function(data){
+			if(data.status){
+				$(tmp).parent().parent().remove();
+			}
+		});
+	}
+}
+</script>
+</body>
+</html>
+<import type="js" file="js.tables" basepath="{$Think.const.ADMIN_RES_PATH}" />

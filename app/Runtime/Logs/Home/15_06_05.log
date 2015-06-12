@@ -1,0 +1,42 @@
+[ 2015-06-05T20:24:55+08:00 ] 127.0.0.1 /category-cid-1.html
+ERR: Think\Controller:getlastsql方法不存在！
+
+[ 2015-06-05T20:32:36+08:00 ] 127.0.0.1 /category-cid-1.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '$children or gc.cat_id in $children ) GROUP BY b.brand_id HAVING goods_num>0 ORD' at line 1
+
+[ 2015-06-05T20:32:58+08:00 ] 127.0.0.1 /category-cid-1.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '{$children} or gc.cat_id in {$children} ) GROUP BY b.brand_id HAVING goods_num>0' at line 1
+
+[ 2015-06-05T20:33:18+08:00 ] 127.0.0.1 /category-cid-1.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '{$children}) or (gc.cat_id in {$children}) ) GROUP BY b.brand_id HAVING goods_nu' at line 1
+
+[ 2015-06-05T20:33:19+08:00 ] 127.0.0.1 /category-cid-1.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '{$children}) or (gc.cat_id in {$children}) ) GROUP BY b.brand_id HAVING goods_nu' at line 1
+
+[ 2015-06-05T20:33:41+08:00 ] 127.0.0.1 /category-cid-1.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '$children) or (gc.cat_id in $children) ) GROUP BY b.brand_id HAVING goods_num>0 ' at line 1
+
+[ 2015-06-05T20:33:42+08:00 ] 127.0.0.1 /category-cid-1.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '$children) or (gc.cat_id in $children) ) GROUP BY b.brand_id HAVING goods_num>0 ' at line 1
+
+[ 2015-06-05T20:34:19+08:00 ] 127.0.0.1 /category-cid-1.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2,3,4,5,1) or (gc.cat_id in 2,3,4,5,1) ) GROUP BY b.brand_id HAVING goods_num>0 ' at line 1
+
+[ 2015-06-05T20:55:26+08:00 ] 127.0.0.1 /category-cid-1.html
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'where clause'
+
+[ 2015-06-05T21:00:32+08:00 ] 127.0.0.1 /category-cid-1.html
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column '__BRAND__.brand_id' in 'where clause'
+
+[ 2015-06-05T21:06:44+08:00 ] 127.0.0.1 /none
+ERR: 无法加载控制器:None
+
+[ 2015-06-05T21:06:52+08:00 ] 127.0.0.1 /none
+ERR: 无法加载控制器:None
+
+[ 2015-06-05T21:07:04+08:00 ] 127.0.0.1 /none
+ERR: 无法加载控制器:None
+
+[ 2015-06-05T21:24:31+08:00 ] 127.0.0.1 /none
+ERR: 无法加载控制器:None
+

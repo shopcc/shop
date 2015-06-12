@@ -1,0 +1,146 @@
+<include file="Public/header" />
+<div style="clear: both"></div>
+<include file="layout/layout" />
+<div class="block box">
+	<div class="blank"></div>
+	<div id="ur_here">
+		当前位置: <a href="../index.php">首页</a>
+		<code>&gt;</code>
+		商品搜索_{$keyword}
+	</div>
+</div>
+<include file="layout/common_layout" />
+
+<div class="blank"></div>
+<script type="text/javascript">
+obj_h4 = document.getElementById("cate").getElementsByTagName("h4")
+obj_ul = document.getElementById("cate").getElementsByTagName("ul")
+obj_img = document.getElementById("cate").getElementsByTagName("img")
+function tab(id)
+{ 
+		if(obj_ul.item(id).style.display == "block")
+		{
+			obj_ul.item(id).style.display = "none"
+			obj_img.item(id).src = "themes/ecmoban_jingdong/images/btn_fold.gif"
+			return false;
+		}
+		else(obj_ul.item(id).style.display == "none")
+		{
+			obj_ul.item(id).style.display = "block"
+			obj_img.item(id).src = "themes/ecmoban_jingdong/images/btn_unfold.gif"
+		}
+}
+</script>
+<include file="layout/history_layout" />
+<div class="AreaR">
+
+	<div class="box">
+		<div class="box_1">
+			<h3>
+
+				<span>搜索结果</span>
+				<form action="search.php" method="post" class="sort" name="listform"
+					id="form">
+					
+					 <input
+						type="hidden" name="page" value="1" /> <input type="hidden"
+						name="display" value="grid" id="display" /> <input type="hidden"
+						name="keywords" value="134" /> <input type="hidden"
+						name="category" value="0" /> <input type="hidden" name="brand"
+						value="0" /> <input type="hidden" name="action" value="" /> <input
+						type="hidden" name="intro" value="" /> <input type="hidden"
+						name="goods_type" value="0" /> <input type="hidden" name="sc_ds"
+						value="0" /> <input type="hidden" name="outstock" value="0" />
+				</form>
+			</h3>
+
+			<form action="compare.php" method="post" name="compareForm"
+				id="compareForm" onsubmit="return compareGoods(this);">
+
+				<div id="goodsBox" class="clearfix goodsBox"
+					style="border: none; padding: 11px 0 10px 5px;">
+					<foreach name="list" item="vo">
+					<div class="goodsItem">
+						<a href="{:U('goods/detail',array('id'=>$vo['goods_id']))}"><img src="../{$vo.goods_thumb}"
+							alt="1345" class="goodsimg" /></a><br />
+						<p>
+							<a href="{:U('goods/detail',array('id'=>$vo['goods_id']))}" title="">{$vo.goods_name}</a>
+						</p>
+						本店价：<font class="shop_s">￥{$vo.shop_price}元</font><br />
+
+						<!-- 
+                        <a href="javascript:addToCart(36)" ><img src="themes/ecmoban_jingdong/images/goumai.gif"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="javascript:collect(36);"><img src="themes/ecmoban_jingdong/images/shoucang.gif"></a> 
+	-->
+
+					</div>
+					</foreach>
+				</div>
+	<div id="pager" class="pagebar">
+			
+		</div>
+			</form>
+			<script type="text/javascript">
+                var button_compare = "比较选定商品";
+                var exist = "您已经选择了%s";
+                var count_limit = "最多只能选择4个商品进行对比";
+                var goods_type_different = "\"%s\"和已选择商品类型不同无法进行对比";
+        
+				                var button_compare = '';
+                                var exist = "您已经选择了%s";
+                                var count_limit = "最多只能选择4个商品进行对比";
+                                var goods_type_different = "\"%s\"和已选择商品类型不同无法进行对比";
+                
+
+        var compare_no_goods = "您没有选定任何需要比较的商品或者比较的商品数少于 2 个。";
+        window.onload = function()
+        {
+          Compare.init();
+          fixpng();
+        }
+	var btn_buy = "购买";
+	var is_cancel = "取消";
+	var select_spe = "请选择商品属性";
+        </script>
+		</div>
+	</div>
+	<div class="blank"></div>
+
+	<form name="selectPageForm" action="/search.php" method="get">
+	<input type="hidden" name="keyword" value="{$keyword}"/>
+
+	
+
+
+	</form>
+	 <load href="{$Think.const.RESOURCE}/js/bootstrap.js"/>
+<load href="{$Think.const.RESOURCE}/js/jquery.twbsPagination.js"/>
+<load href="{$Think.const.RESOURCE}/css/bootstrap.css"/>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#pager').twbsPagination({
+        totalPages: {$total},
+        visiblePages:{$vpage},
+    first:"首页",
+    prev:"上一页",
+    next:"下一页",
+    last:"末页",
+    version: '1.1',
+    tagName:'AAA',
+        onPageClick: function (event, page) {
+          if(page <=1)page =1;
+        $.post('{:U('/search/results')}',{page:page,keyword:$("input[name='keyword']").val()},function(data){
+        	$("#goodsBox").html(data);
+        });
+      
+        
+        }
+    });
+});
+</script>
+
+</div>
+
+<div></div>
+<div class="blank10"></div>
+<include file="Public/footer"/>

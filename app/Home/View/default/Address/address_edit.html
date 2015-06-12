@@ -1,0 +1,97 @@
+<extend name="Member:member_center" />
+  <block name="title">编辑收货地址</block> 
+  <block name="right">   
+  <div class="AreaR">
+    <div class="box">
+     <div class="box_1">
+      <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
+              <h5><span>收货人信息</span></h5>
+        <div class="blank"></div>
+
+           <import type="js" file="js.shopping_flow" basepath="{$Think.const.RESOURCE}"/>          
+           <script type="text/javascript">
+            
+                            var consignee_not_null = "收货人姓名不能为空！";
+                            var country_not_null = "请您选择收货人所在国家！";
+                            var province_not_null = "请您选择收货人所在省份！";
+                            var city_not_null = "请您选择收货人所在城市！";
+                            var district_not_null = "请您选择收货人所在区域！";
+                            var invalid_email = "您输入的邮件地址不是一个合法的邮件地址。";
+                            var address_not_null = "收货人的详细地址不能为空！";
+                            var tele_not_null = "电话不能为空！";
+                            var shipping_not_null = "请您选择配送方式！";
+                            var payment_not_null = "请您选择支付方式！";
+                            var goodsattr_style = "1";
+                            var tele_invaild = "电话号码不有效的号码";
+                            var zip_not_num = "邮政编码只能填写数字";
+                            var mobile_invaild = "手机号码不是合法号码";
+                            
+              onload = function() {
+                if (!document.all)
+                {
+                  document.forms['theForm'].reset();
+                }
+              }
+              
+            </script>
+                        <form action="{:U('address/edit')}" method="post" name="theForm" onsubmit="return checkConsignee(this)">
+              <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+                <tr>
+                  <td align="right" bgcolor="#ffffff">配送区域：</td>
+                  <td colspan="3" align="left" bgcolor="#ffffff">
+                  <select id="s_province" name="s_province">
+                   
+                  </select>&nbsp;&nbsp;
+                  <select id="s_city" name="s_city" ></select>&nbsp;&nbsp;
+                  <select id="s_county" name="s_county"></select>
+                  (必填) </td>
+                </tr>
+                <tr>
+                  <td align="right" bgcolor="#ffffff">收货人姓名：</td>
+                  <td align="left" bgcolor="#ffffff"><input name="consignee" type="text" class="inputBg" id="consignee_0" value="" />
+                  (必填) </td>
+                  <td align="right" bgcolor="#ffffff">电子邮件地址：</td>
+                  <td align="left" bgcolor="#ffffff"><input name="email" type="text" class="inputBg" id="email_0" value="" />
+                  (必填)</td>
+                </tr>
+                <tr>
+                  <td align="right" bgcolor="#ffffff">详细地址：</td>
+                  <td align="left" bgcolor="#ffffff"><input name="address" type="text" class="inputBg" id="address_0" value="" />
+                  (必填)</td>
+                  <td align="right" bgcolor="#ffffff">邮政编码：</td>
+                  <td align="left" bgcolor="#ffffff"><input name="zipcode" type="text" class="inputBg" id="zipcode_0" value="" /></td>
+                </tr>
+                <tr>
+                  <td align="right" bgcolor="#ffffff">电话：</td>
+                  <td align="left" bgcolor="#ffffff"><input name="tel" type="text" class="inputBg" id="tel_0" value="" />
+                  (必填)</td>
+                  <td align="right" bgcolor="#ffffff">手机：</td>
+                  <td align="left" bgcolor="#ffffff"><input name="mobile" type="text" class="inputBg" id="mobile_0" value="" /></td>
+                </tr>
+                <tr>
+                  <td align="right" bgcolor="#ffffff">标志建筑：</td>
+                  <td align="left" bgcolor="#ffffff"><input name="sign_building" type="text" class="inputBg" id="sign_building_0" value="" /></td>
+                  <td align="right" bgcolor="#ffffff">最佳送货时间：</td>
+                  <td align="left" bgcolor="#ffffff"><input name="best_time" type="text"  class="inputBg" id="best_time_0" value="" /></td>
+                </tr>
+                <tr>
+                  <td align="right" bgcolor="#ffffff">&nbsp;</td>
+                  <td colspan="3" align="center" bgcolor="#ffffff">                    <input type="submit" name="submit" class="bnt_blue_1" value="确认修改" />
+                                        <input type="hidden" name="act" value="act_add_address" />
+                   
+                  </td>
+                </tr>
+              </table>
+            </form>   
+      </div>
+     </div>
+    </div>
+  </div>
+
+  <load href="{$Think.const.RESOURCE}/js/city.js"/>
+  <script language="javascript">
+$(function(){
+  $(document).area("s_province","s_city","s_county");//调用插件
+});
+</script>
+  </block>
